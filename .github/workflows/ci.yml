@@ -1,0 +1,50 @@
+name: CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+
+jobs:
+  api-tests:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_USER: matchday
+          POSTGRES_PASSWORD: matchday
+          POSTGRES_DB: matchday
+        ports: [ '5432:5432' ]
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+      redis:
+        image: redis:7
+        ports: [ '6379:6379' ]
+    env:
+      DATABASE_URL: postgresql+psycopg://matchday:matchday@localhost:5432/matchday
+      REDIS_URL: redis://localhost:6379/0
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install API deps
+        run: pip install -r apps/api/requirements.txt
+      - name: Run tests
+        run: pytest tests/api -v
+
+  web-build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Install web deps
+        run: cd apps/web && npm install
+      - name: Build web
+        run: cd apps/web && npm run build
