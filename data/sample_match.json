@@ -1,0 +1,95 @@
+{
+  "teams": [
+    {
+      "name": "Riverside FC",
+      "players": [
+        {
+          "name": "A. Mensah",
+          "position": "ST"
+        },
+        {
+          "name": "J. Okafor",
+          "position": "CM"
+        },
+        {
+          "name": "L. Bianchi",
+          "position": "GK"
+        }
+      ]
+    },
+    {
+      "name": "Hilltown United",
+      "players": [
+        {
+          "name": "K. Novak",
+          "position": "ST"
+        },
+        {
+          "name": "D. Reyes",
+          "position": "CB"
+        },
+        {
+          "name": "S. Haddad",
+          "position": "GK"
+        }
+      ]
+    }
+  ],
+  "match": {
+    "home": "Riverside FC",
+    "away": "Hilltown United"
+  },
+  "events": [
+    {
+      "minute": 5,
+      "type": "shot",
+      "team": "Riverside FC"
+    },
+    {
+      "minute": 12,
+      "type": "shot_on_target",
+      "team": "Riverside FC"
+    },
+    {
+      "minute": 23,
+      "type": "goal",
+      "team": "Riverside FC",
+      "detail": "A. Mensah"
+    },
+    {
+      "minute": 30,
+      "type": "possession",
+      "team": "Riverside FC",
+      "detail": "58"
+    },
+    {
+      "minute": 41,
+      "type": "yellow_card",
+      "team": "Hilltown United",
+      "detail": "D. Reyes"
+    },
+    {
+      "minute": 58,
+      "type": "shot_on_target",
+      "team": "Hilltown United"
+    },
+    {
+      "minute": 67,
+      "type": "goal",
+      "team": "Hilltown United",
+      "detail": "K. Novak"
+    },
+    {
+      "minute": 74,
+      "type": "substitution",
+      "team": "Riverside FC",
+      "detail": "Okafor -> Tan"
+    },
+    {
+      "minute": 88,
+      "type": "goal",
+      "team": "Riverside FC",
+      "detail": "A. Mensah"
+    }
+  ]
+}
