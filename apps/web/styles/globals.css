@@ -1,0 +1,5 @@
+* { box-sizing: border-box; }
+body { margin: 0; background: #0b1120; color: #e2e8f0; }
+a { color: #4dabf7; }
+pre { background: #111827; padding: 12px; border-radius: 8px; overflow: auto; }
+input, select, button { padding: 8px; border-radius: 6px; border: 1px solid #334155; }
